@@ -7,7 +7,7 @@ services:
       context: .
     restart: on-failure
     volumes:
-      - D:\projects\JM\secrets\jmfc:/var/data/secrets/jmfc
+      - ${JMFC_SECRETS}:/var/data/secrets/jmfc
     networks:
       jenkins:
         ipv4_address: 172.16.1.221
