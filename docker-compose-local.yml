@@ -1,0 +1,43 @@
+version: '3'
+services:
+  proxy:
+    container_name: proxy
+    build:
+      context: .
+      dockerfile: Dockerfile.proxy
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+  database:
+    container_name: database
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /var/data/mysql/secrets/root_pass
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ${JMA_DATABASE}:/var/lib/mysql
+      - ${MYSQL_SECRETS}:/var/data/mysql/secrets
+  jmfc:
+    volumes:
+      - ./:/var/www/html
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: database
+      PMA_ABSOLUTE_URI: ${JMFC_BASE_URL}/phpmyadmin
+      MYSQL_ROOT_PASSWORD_FILE: /var/data/mysql/secrets/root_pass
+    restart: always
+    volumes:
+      - ${MYSQL_SECRETS}:/var/data/mysql/secrets
+    networks:
+      jenkins:
+        ipv4_address: 172.16.1.30
+networks:
+  default:
+    external:
+      name: jenkins
+  jenkins:
+    external: true

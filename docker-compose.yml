@@ -1,0 +1,19 @@
+version: '3'
+services:
+  jmfc:
+    container_name: jmfc
+    image: jungesmuensterschwarzach/feedback-collector:latest
+    build:
+      context: .
+    restart: on-failure
+    volumes:
+      - D:\projects\JM\secrets\jmfc:/var/data/secrets/jmfc
+    networks:
+      jenkins:
+        ipv4_address: 172.16.1.221
+networks:
+  default:
+    external:
+      name: jenkins
+  jenkins:
+    external: true

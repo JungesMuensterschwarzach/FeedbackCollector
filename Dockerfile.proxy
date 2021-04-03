@@ -1,0 +1,2 @@
+FROM nginx:stable-alpine
+COPY ./proxy/proxy.conf /etc/nginx/nginx.conf
