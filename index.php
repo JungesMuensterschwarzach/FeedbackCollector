@@ -88,14 +88,14 @@
 						onclick="window.location.href = 'https://app.junges-muensterschwarzach.de';"/>
 				</div>
 				<hr>
-				<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Feedback zu unserem Online-Osterkurs 2021</strong> zukommen lassen.</p>
+				<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Feedback zu unserem Online-Pfingstkurs 2021</strong> zukommen lassen.</p>
 				<p>Diese Seite ist quasi die digitale Alternative zu den üblichen Feedback-Wänden, die ihr von den Präsenzkursen vielleicht kennt.</p>
 				<p>Wir werden nach dem Kurs in der Kursleitung über dein Feedback sprechen und es bei der Planung des kommmenden Pfingstkurses berücksichtigen.</p>
 				<p>Beachte bitte, <strong>keine personenbezogenen Daten</strong> einzusenden, denn dein Feedback wird anschließend automatisch und unmoderiert am Ende dieser Seite für alle Teilnehmer sichtbar aufgelistet.</p>
 				<hr>
 				<form name="form" method="POST" class="form-horizontal">
 					<div class="form-group">
-						<label class="control-label col-12" for="important"><strong>Was war dir beim Osterkurs wichtig?</strong></label>
+						<label class="control-label col-12" for="important"><strong>Was war dir beim Kurs wichtig?</strong></label>
 						<div class="col-12">
 							<textarea name="important" class="form-control"  
 								rows="8"><?php if (isset($_POST["important"]) === true) echo($_POST["important"]);?></textarea>
@@ -124,7 +124,7 @@
 				</form>
 				<hr>
 				<h4 class="mt-4">So fanden andere Teilnehmer den Kurs</h4>
-				<p class="mt-4"><strong>Was war dir beim Osterkurs wichtig?</strong></p>
+				<p class="mt-4"><strong>Was war dir beim Kurs wichtig?</strong></p>
 				<ul>
 				<?php
 					foreach ($feedback["important"] as $important) {
