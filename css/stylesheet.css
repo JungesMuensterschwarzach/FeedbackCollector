@@ -14,6 +14,10 @@ textarea, input[type="checkbox"] {
     color: #f18613;
 }
 
+.jmfc-examples {
+    font-size: x-small;
+}
+
 #logo {
     cursor: pointer;
 }
