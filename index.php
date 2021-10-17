@@ -4,7 +4,8 @@
 			"important" => array(),
 			"good" => array(),
 			"improvable" => array(),
-			"referrer" => array()
+			"referrer" => array(),
+			"misc" => array()
 		);
 
 		$secretsDir = getenv("JMFC_SECRETS") ? getenv("JMFC_SECRETS") : "/var/data/secrets/jmfc";
@@ -19,9 +20,9 @@
 
 		if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			$stmt = $mysqli->prepare(
-				"INSERT INTO feedback(important, good, improvable, referrer) VALUES(?, ?, ?, ?)"
+				"INSERT INTO feedback(important, good, improvable, referrer, misc) VALUES(?, ?, ?, ?, ?)"
 			);
-			$stmt->bind_param("ssss", $_POST["important"], $_POST["good"], $_POST["improvable"], $_POST["referrer"]);
+			$stmt->bind_param("sssss", $_POST["important"], $_POST["good"], $_POST["improvable"], $_POST["referrer"], $_POST["misc"]);
 	
 			if ($stmt->execute() === false) {
 				$stmt->close();
@@ -39,7 +40,7 @@
 		}
 
 		$stmt = $mysqli->prepare(
-			"SELECT important, good, improvable, referrer 
+			"SELECT important, good, improvable, referrer, misc 
 			 FROM feedback"
 		);
 
@@ -54,6 +55,7 @@
 			array_push($feedback["good"], $row["good"]);
 			array_push($feedback["improvable"], $row["improvable"]);
 			array_push($feedback["referrer"], $row["referrer"]);
+			array_push($feedback["misc"], $row["misc"]);
 		}
 		$stmt->close();
 	} catch(Exception $exc) {
@@ -140,6 +142,15 @@
 								rows="8"><?php if (isset($_POST["referrer"]) === true) echo($_POST["referrer"]);?></textarea>
 						</div>
 					</div>
+					<div class="form-group mt-4">
+						<label class="control-label col-12" for="referrer">
+							<strong>Was möchtest du uns sonst noch sagen?</strong>
+						</label>
+						<div class="col-12">
+							<textarea name="misc" class="form-control"  
+								rows="8"><?php if (isset($_POST["misc"]) === true) echo($_POST["misc"]);?></textarea>
+						</div>
+					</div>
 					<hr>
 					<div class="form-group mt-4">
 						<div class="col-12">
@@ -197,6 +208,19 @@
 						}
 				?>
 						<li><?php echo(nl2br(htmlspecialchars($referrer))); ?></li>
+				<?php
+					}
+				?>
+				</ul>
+				<p class="mt-4"><strong>Was möchtest du uns sonst noch sagen?</strong></p>
+				<ul>
+				<?php
+					foreach ($feedback["misc"] as $misc) {
+						if (empty($misc)) {
+							continue;
+						}
+				?>
+						<li><?php echo(nl2br(htmlspecialchars($misc))); ?></li>
 				<?php
 					}
 				?>
