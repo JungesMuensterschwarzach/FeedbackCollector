@@ -3,9 +3,7 @@ services:
   jmfc:
     container_name: jmfc
     image: jungesmuensterschwarzach/feedback-collector:latest
-    build:
-      context: .
-    restart: on-failure
+    restart: always
     volumes:
       - ${JMFC_SECRETS}:/var/data/secrets/jmfc
     networks:
