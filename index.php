@@ -97,7 +97,7 @@ try {
 				</div>
 			</div>
 			<hr>
-			<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Feedback zu unserem Pfingstkurs 2022</strong> zukommen lassen.</p>
+			<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Feedback zu unserem Silvesterkurs 2022/2023</strong> zukommen lassen.</p>
 			<p>Diese Seite ist die digitale Alternative zu den Feedback-Wänden vor Ort.</p>
 			<p>Wir werden nach dem Kurs in der Kursleitung über dein Feedback sprechen und es bei der Planung der kommenden Kurse berücksichtigen.</p>
 			<p>Beachte bitte, <strong>keine personenbezogenen Daten</strong> einzusenden, denn dein Feedback wird anschließend automatisch und unmoderiert am Ende dieser Seite für alle Teilnehmer sichtbar aufgelistet.</p>
