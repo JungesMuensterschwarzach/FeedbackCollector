@@ -2,7 +2,7 @@ version: '3'
 services:
   jmfc:
     container_name: jmfc
-    image: jungesmuensterschwarzach/feedback-collector:latest
+    image: jenkinsluckev/feedback-collector:latest
     restart: always
     volumes:
       - ${JMFC_SECRETS}:/var/data/secrets/jmfc
