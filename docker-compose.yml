@@ -5,10 +5,13 @@ services:
     image: jenkinsluckev/feedback-collector:latest
     restart: always
     volumes:
-      - ${JMFC_SECRETS}:/var/data/secrets/jmfc
+      - jmfc-secrets:/var/data/secrets/jmfc
     networks:
       jenkins:
         ipv4_address: 172.16.1.221
+volumes:
+  jmfc-secrets:
+    external: true
 networks:
   default:
     external:
