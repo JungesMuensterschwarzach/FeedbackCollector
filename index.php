@@ -97,7 +97,7 @@ try {
 				</div>
 			</div>
 			<hr>
-			<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Feedback zu unserem Osterkurs 2023</strong> zukommen lassen.</p>
+			<p>Mit diesem Formular kannst du uns ganz anonym dein <strong>Kurs-Feedback</strong> zukommen lassen.</p>
 			<p>Diese Seite ist die digitale Alternative zu den Feedback-Wänden vor Ort.</p>
 			<p>Wir werden nach dem Kurs in der Kursleitung über dein Feedback sprechen und es bei der Planung der kommenden Kurse berücksichtigen.</p>
 			<p>Beachte bitte, <strong>keine personenbezogenen Daten</strong> einzusenden, denn dein Feedback wird anschließend automatisch und unmoderiert am Ende dieser Seite für alle Teilnehmer sichtbar aufgelistet.</p>
@@ -115,7 +115,7 @@ try {
 				<div class="form-group mt-4">
 					<label class="control-label col-12" for="good">
 						<strong>Was fandest du am Kurs gelungen?</strong><br />
-						<span class="jmfc-examples">(Bsp.: bestimmte Programmpunkte, Corona-konforme Durchführung in Präsenz, diese Feedback-Wand (😂), ...) </span>
+						<span class="jmfc-examples">(Bsp.: bestimmte Programmpunkte, die Sonnenaufgangsspaziergänge mit Br. Kilian, diese Feedback-Wand (😂), ...) </span>
 					</label>
 					<div class="col-12">
 						<textarea name="good" class="form-control" rows="8"><?php if (isset($_POST["good"]) === true) echo ($_POST["good"]); ?></textarea>
@@ -124,7 +124,7 @@ try {
 				<div class="form-group mt-4">
 					<label class="control-label col-12" for="improvable">
 						<strong>Was hättest du dir (anders/noch) gewünscht?</strong><br />
-						<span class="jmfc-examples">(Bsp.: mehr frei verfügbare Zeit, anderes Workshop-Angebot, Jesajas Witze (😂), ...)</span>
+						<span class="jmfc-examples">(Bsp.: mehr frei verfügbare Zeit, anderes Workshop-Angebot, mehr flache Witze (😂), ...)</span>
 					</label>
 					<div class="col-12">
 						<textarea name="improvable" class="form-control" rows="8"><?php if (isset($_POST["improvable"]) === true) echo ($_POST["improvable"]); ?></textarea>
