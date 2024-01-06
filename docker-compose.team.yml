@@ -3,3 +3,11 @@ services:
   jmfc:
     environment:
       - TEAM=1
+    volumes:
+      - jmfct-secrets:/var/data/secrets/jmfc
+    networks:
+      jenkins:
+        ipv4_address: 172.16.1.222
+volumes:
+  jmfct-secrets:
+    external: true
