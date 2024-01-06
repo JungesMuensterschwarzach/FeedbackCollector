@@ -31,7 +31,7 @@ volumes:
     external: true
 networks:
   default:
-    external:
-      name: jenkins
+    external: true
+    name: jenkins
   jenkins:
     external: true
