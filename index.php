@@ -132,7 +132,7 @@ try {
 				<h1 class="d-inline-block m-2 jmfc-important"><?= $meta['title'] ?></h1>
 				<div>
 					<img id="qr" class="d-inline-block m-2" src="<?= $meta['qr'] ?>" height="100" width="100" />
-					<img id="logo" class="d-inline-block m-2" src="logo.png" height="100" width="100" onclick="window.location.href = 'https://app.junges-muensterschwarzach.de';" />
+					<img id="logo" class="d-inline-block m-2" src="logo.png" height="100" width="100" onclick="window.location.href = 'https://junges-muensterschwarzach.roth-familie.eu';" />
 				</div>
 			</div>
 			<hr>
